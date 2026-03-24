@@ -2,16 +2,22 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use(express.static(path.join(__dirname, 'public')));
+const limiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 100,
+});
 
-app.get('/', (req, res) => {
+app.get('/', limiter, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const MAX_HISTORY = 100;
 const chatHistory = [];
