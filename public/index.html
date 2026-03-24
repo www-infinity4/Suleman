@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suleman & Crew</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Suleman &amp; Crew</h1>
+      <p class="site-tagline">Connect, chat, and vibe together</p>
+    </div>
+  </header>
+
+  <!-- Twitter / X connect section -->
+  <section class="twitter-section">
+    <div class="card twitter-card">
+      <img
+        class="twitter-avatar"
+        src="https://unavatar.io/twitter/suleman"
+        alt="Suleman's Twitter avatar"
+        onerror="this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png'"
+      />
+      <div class="twitter-info">
+        <h2>Follow Suleman on X&nbsp;(Twitter)</h2>
+        <p>Stay up to date with his latest posts, Twitter Spaces, and crew updates.</p>
+        <div class="twitter-actions">
+          <a
+            class="btn btn-twitter"
+            href="https://x.com/suleman"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <!-- Twitter / X bird logo -->
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/>
+            </svg>
+            Follow on X
+          </a>
+          <a
+            class="btn btn-space"
+            href="https://x.com/i/spaces/1rGmqoOyzndGy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎙 Join Twitter Space
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Chat section -->
+  <section class="chat-section">
+    <div class="card chat-card">
+      <h2 class="chat-heading">🌐 Global Chat</h2>
+
+      <!-- Join prompt -->
+      <div id="join-form" class="join-form">
+        <input
+          id="username-input"
+          class="input-field"
+          type="text"
+          maxlength="30"
+          placeholder="Enter your name to join…"
+          autocomplete="off"
+        />
+        <button id="join-btn" class="btn btn-join">Join Chat</button>
+      </div>
+
+      <!-- Chat interface (hidden until user joins) -->
+      <div id="chat-container" class="chat-container hidden">
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+        <form id="message-form" class="message-form">
+          <input
+            id="message-input"
+            class="input-field"
+            type="text"
+            maxlength="500"
+            placeholder="Type a message…"
+            autocomplete="off"
+          />
+          <button class="btn btn-send" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2024 Suleman &amp; Crew &mdash; All rights reserved</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

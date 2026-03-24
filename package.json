@@ -1,0 +1,13 @@
+{
+  "name": "suleman-crew",
+  "version": "1.0.0",
+  "description": "A website where Suleman and his crew can connect with each other",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}
